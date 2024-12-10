@@ -1,68 +1,203 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --nav-background-color: hsl(260, 100%, 97%);
+  --posts-background-color: #eee6fd;
+  --post-color: hsl(260, 80%, 90%);
+  --posts-border-color: #fff;
+  --error-color: #d8000c;
+  --error-background-color: #ffbaba;
+  --success-color: #4bb543;
+  --success-background-color: #e6efc2;
 }
 
 body {
-  margin: 0;
   display: flex;
+  text-align: center;
+  background-color: var(--posts-background-color);
+}
+
+nav {
+  width: 100vw;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+h3 {
+  font-weight: normal;
+}
+
+.postContainer,
+header {
+  padding: 2rem;
+}
+
+.postContainer .post:nth-child(odd) {
+  background-color: var(--post-color);
+}
+
+.post {
+  margin: 1rem;
+  padding: 3rem;
+}
+
+.postBody {
+  display: flex;
+  flex-direction: column;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  place-content: center;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  label {
+    display: grid;
+    gap: 1rem;
   }
-  a:hover {
-    color: #747bff;
+}
+
+.postDetails,
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  gap: 1rem;
+
+  img {
+    width: 1.5rem;
   }
+}
+
+.iconContainer {
+  flex-direction: row;
+
   button {
-    background-color: #f9f9f9;
+    border: none;
+    background-color: transparent;
   }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  gap: 1rem;
+
+  .comment {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    padding: 1.25rem;
+    gap: 1rem;
+
+    h2 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.commentsContainer .comment:nth-child(even) {
+  background-color: white;
+}
+
+.addComment {
+  display: flex;
+  padding: 2rem;
+  place-content: center;
+  place-items: center;
+  background-color: var(--post-color);
+
+  form {
+    padding: 0rem;
+
+    h2 {
+      padding: 0rem;
+      padding-bottom: 1rem;
+      margin: 0rem;
+    }
+  }
+}
+
+.votesContainer {
+  display: flex;
+  gap: 1rem;
+  place-items: center;
+  place-content: center;
+  padding-bottom: 1rem;
+
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.selectedVote {
+  filter: invert(10%) sepia(93%) saturate(7479%) hue-rotate(12deg)
+    brightness(93%) contrast(118%);
+}
+
+.unselectedVote {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%);
+}
+
+.selectedVote:hover,
+.unselectedVote:hover {
+  scale: 1.5;
+}
+
+.error {
+  color: var(--error-color);
+  background-color: var(--error-background-color);
+  padding: 0.5rem;
+}
+
+.success {
+  color: var(--success-color);
+  background-color: var(--success-background-color);
+  padding: 0.5rem;
+}
+
+#loginForm,
+#registerForm {
+  color: rgb(40, 40, 40);
+  display: grid;
+  gap: 2rem;
+  background-color: var(--nav-background-color);
+  padding: 0 1rem 1rem;
+
+  div > label > input {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  button {
+    font-size: large;
+    place-self: center;
+    width: 250px;
+  }
+}
+
+#registerForm {
+  background-color: var(--posts-background-color);
 }
