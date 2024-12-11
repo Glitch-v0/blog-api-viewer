@@ -6,6 +6,14 @@ This viewer front-end only contains functionality for users, admin functionality
 Admins: Can create, read, update, and delete posts; and create, read, and delete comments.
 Users: Can read posts; and create, read, and update comments.
 
-Github Links: -https://github.com/Glitch-v0/blog-api-backend -https://github.com/Glitch-v0/blog-api-publisher -https://github.com/Glitch-v0/blog-api-viewer (current)
+Github Links:
 
-Live Interactive Links: -https://blog-backend.jonesy.monster/api/v1 -https://blog-publisher.jonesy.monster/ -https://blog.jonesy.monster/
+- https://github.com/Glitch-v0/blog-api-backend
+- https://github.com/Glitch-v0/blog-api-publisher
+- https://github.com/Glitch-v0/blog-api-viewer (current)
+
+Live Interactive Links:
+
+- https://blog-backend.jonesy.monster/api/v1
+- https://blog-publisher.jonesy.monster/
+- https://blog.jonesy.monster/
